@@ -10,10 +10,49 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_19_190040) do
+ActiveRecord::Schema.define(version: 2019_12_20_114926) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "babyclasses", force: :cascade do |t|
+    t.string "class"
+    t.string "class_pic"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "child_teachers", force: :cascade do |t|
+    t.bigint "child_id", null: false
+    t.bigint "teacher_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["child_id"], name: "index_child_teachers_on_child_id"
+    t.index ["teacher_id"], name: "index_child_teachers_on_teacher_id"
+  end
+
+  create_table "children", force: :cascade do |t|
+    t.string "name"
+    t.string "child_pic"
+    t.boolean "gender"
+    t.date "birthday"
+    t.string "email"
+    t.string "address"
+    t.integer "tel"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "babyclass_id"
+    t.index ["babyclass_id"], name: "index_children_on_babyclass_id"
+  end
+
+  create_table "class_teachers", force: :cascade do |t|
+    t.bigint "babyclass_id", null: false
+    t.bigint "teacher_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["babyclass_id"], name: "index_class_teachers_on_babyclass_id"
+    t.index ["teacher_id"], name: "index_class_teachers_on_teacher_id"
+  end
 
   create_table "dashboards", force: :cascade do |t|
     t.string "title"
@@ -27,4 +66,19 @@ ActiveRecord::Schema.define(version: 2019_12_19_190040) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "teachers", force: :cascade do |t|
+    t.string "name"
+    t.string "teacher_pic"
+    t.boolean "gender"
+    t.string "email"
+    t.string "address"
+    t.integer "tel"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  add_foreign_key "child_teachers", "children"
+  add_foreign_key "child_teachers", "teachers"
+  add_foreign_key "class_teachers", "babyclasses"
+  add_foreign_key "class_teachers", "teachers"
 end
