@@ -2,7 +2,7 @@
     <%= render 'shared/backend/navbar' %>
 
 <div class="container">
-<p class="notice"><%= notice %></p>
+<h1>全校學生</h1>
 <table class="table">
   <thead>
     <tr>
@@ -12,11 +12,11 @@
     </tr>
   </thead>
   <tbody>
-    <% @student.each do |student| %>
+    <% @students.each do |student| %>
       <tr>
           <td>圖</td>
           <td><%= student.name %></td>
-          <td><%= link_to '詳情', student_teacher_path(student) %></td>
+          <td><%= link_to '詳情', teacher_student_path(@teacher, student) %></td>
       </tr>
     <% end %>
 
