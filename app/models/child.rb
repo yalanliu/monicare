@@ -4,4 +4,5 @@ class Child < ApplicationRecord
   has_many :pick_ups
   has_many :teachers, through: :child_teachers
   belongs_to :user
+  has_many :dashboards
 end
