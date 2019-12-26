@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_25_141127) do
+ActiveRecord::Schema.define(version: 2019_12_26_100759) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -91,6 +91,8 @@ ActiveRecord::Schema.define(version: 2019_12_25_141127) do
     t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "child_id"
+    t.index ["child_id"], name: "index_users_on_child_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
@@ -99,4 +101,5 @@ ActiveRecord::Schema.define(version: 2019_12_25_141127) do
   add_foreign_key "child_teachers", "teachers"
   add_foreign_key "class_teachers", "babyclasses"
   add_foreign_key "class_teachers", "teachers"
+  add_foreign_key "users", "children"
 end
