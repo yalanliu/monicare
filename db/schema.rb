@@ -10,15 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 ActiveRecord::Schema.define(version: 2019_12_27_155844) do
-=======
-ActiveRecord::Schema.define(version: 2019_12_26_100759) do
->>>>>>> addchildparents
-=======
-ActiveRecord::Schema.define(version: 2019_12_26_140921) do
->>>>>>> AddColumsToUsers
+
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -113,8 +107,6 @@ ActiveRecord::Schema.define(version: 2019_12_26_140921) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "child_id"
-<<<<<<< HEAD
-<<<<<<< HEAD
     t.string "name"
     t.integer "tel"
     t.string "address"
@@ -131,14 +123,11 @@ ActiveRecord::Schema.define(version: 2019_12_26_140921) do
     t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-=======
-=======
     t.string "name"
     t.integer "tel"
     t.string "address"
->>>>>>> AddColumsToUsers
     t.index ["child_id"], name: "index_users_on_child_id"
->>>>>>> addchildparents
+    t.index ["child_id"], name: "index_users_on_child_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
@@ -148,9 +137,6 @@ ActiveRecord::Schema.define(version: 2019_12_26_140921) do
   add_foreign_key "children", "users"
   add_foreign_key "class_teachers", "babyclasses"
   add_foreign_key "class_teachers", "teachers"
-<<<<<<< HEAD
   add_foreign_key "pick_ups", "children"
-=======
->>>>>>> addchildparents
   add_foreign_key "users", "children"
 end
