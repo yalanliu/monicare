@@ -5,6 +5,7 @@
   <h2>老師註冊</h2>
   <%= render "devise/shared/error_messages", resource: resource %>
 
+<<<<<<< HEAD
 
   <div class="field form-group h3">
     <%= f.label :name %><br />
@@ -12,11 +13,18 @@
   </div>
 
   <div class="field form-group h3">
+=======
+  <div class="field  form-group h3">
+>>>>>>> member part1
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
   </div>
 
+<<<<<<< HEAD
   <div class="field form-group h3">
+=======
+  <div class="field  form-group h3">
+>>>>>>> member part1
     <%= f.label :password %>
     <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> characters minimum)</em>
@@ -29,7 +37,11 @@
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
   </div>
 
+<<<<<<< HEAD
   <div class="actions btn">
+=======
+  <div class="actions">
+>>>>>>> member part1
     <%= f.submit "註冊" %>
   </div>
   <%= render "teachers/shared/links" %>
