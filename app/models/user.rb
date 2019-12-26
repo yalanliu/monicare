@@ -3,11 +3,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-<<<<<<< HEAD
 
   has_many :children
 
-=======
-  has_many :children
->>>>>>> addchildparents
 end
