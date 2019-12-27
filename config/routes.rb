@@ -2,37 +2,29 @@ Rails.application.routes.draw do
   devise_for :teachers
   devise_for :users
 
-  namespace :teacher do
-    resource :dashboard, only: [:show] do
-      resources :myclass, only: [:show]
+  
+  root 'homepage#show'
 
-      resources :children, only: [:show] do
+  resource :dashboard, only:[:show] do
+    resources :children do 
+      get :overview
+      resources :eat, except:[:index]
+      resources :pick_up
+      resources :misc, except:[:index]
+      resources :medicine, except:[:index] 
+    end
+  end
+
+  namespace :teacher do
+    resource :dashboard, only:[:show] do
+      resources :myclass, only:[:show]
+      resources :children do 
         get :overview
+        resources :eat, except:[:index]
         resources :pick_up
-        resources :eat
-        resources :misc
-        resources :medcine
+        resources :misc, except:[:index]
+        resources :medicine, except:[:index] 
       end
     end
   end
-  
-  resource :dashboard, only: [:show] do
-    resources :children, only: [:show] do
-      get :overview
-      resources :pick_up
-      resources :eat
-      resources :misc
-      resources :medcine
-    end
-  end
-
-  resources :teachers do
-    member do
-      get :student
-    end
-  end
-  root 'teachers#index'
-
-  resources :children
-  
 end
