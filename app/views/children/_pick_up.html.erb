@@ -1,0 +1,11 @@
+<h1>可接送親屬 :</h1>
+<%= link_to "+", new_dashboard_child_pick_up_path(child), class: 'btn btn-outline-secondary btn-lg' %>
+
+<% child.pick_ups.each do |pick_up| %>
+  <%= link_to dashboard_child_pick_up_path(:child_id => child.id, :id => pick_up.id) do %>
+    <li>
+      <%= pick_up.name %>
+    </li>
+  <% end %>
+<% end %>
+<%= javascript_pack_tag 'pick_up.js' %>
