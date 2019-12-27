@@ -1,6 +1,6 @@
-class TeachersController < ApplicationController
+class Teacher::DashboardsController < ApplicationController
   before_action :baby_class
-  def index
+  def show
     @teacher = Teacher.first
     @students = @teacher.children.distinct
   end
@@ -10,6 +10,7 @@ class TeachersController < ApplicationController
     @pick_ups = @student.pick_ups
     @dashboards = @student.dashboards.medicine
   end
+  
 
 
   def medicine
