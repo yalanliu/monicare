@@ -68,6 +68,17 @@ ActiveRecord::Schema.define(version: 2019_12_26_140921) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "pick_ups", force: :cascade do |t|
+    t.string "name"
+    t.string "pick_up_pic"
+    t.string "relationship"
+    t.text "note"
+    t.bigint "child_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["child_id"], name: "index_pick_ups_on_child_id"
+  end
+
   create_table "teachers", force: :cascade do |t|
     t.string "name"
     t.string "teacher_pic"
@@ -119,4 +130,5 @@ ActiveRecord::Schema.define(version: 2019_12_26_140921) do
   add_foreign_key "class_teachers", "babyclasses"
   add_foreign_key "class_teachers", "teachers"
   add_foreign_key "users", "children"
+  add_foreign_key "pick_ups", "children"
 end

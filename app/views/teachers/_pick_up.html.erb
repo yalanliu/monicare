@@ -1,0 +1,9 @@
+<h1>可接送親屬 :</h1>
+<% @pick_ups.each do |pick_up| %>
+  <div class="row">
+    <div class="col-lg-4">
+      <img src="<%= pick_up.pick_up_pic %>" alt="<%= pick_up.name %>" class="rounded-circle">
+      <h2><%= link_to '#' do %><%= pick_up.name %><% end %></h2>
+    </div>
+  </div>
+<% end %>
