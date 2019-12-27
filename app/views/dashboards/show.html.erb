@@ -1,0 +1,5 @@
+<h1>My children</h1>
+<%= link_to dashboard_child_overview_path(params[:child_id]) do %>
+  <%= User.children.child_pic %>
+  <%= User.children.name %>
+<% end %>
