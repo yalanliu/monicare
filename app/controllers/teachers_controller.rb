@@ -1,16 +1,15 @@
-class Teacher::DashboardsController < ApplicationController
+class TeachersController < ApplicationController
   before_action :baby_class
-  def show
-    @teacher = current_teacher
+  def index
+    @teacher = Teacher.first
     @students = @teacher.children.distinct
+
   end
 
   def student
     @student = Child.find(params[:id])
-    @pick_ups = @student.pick_ups
     @dashboards = @student.dashboards.medicine
   end
-  
 
 
   def medicine
