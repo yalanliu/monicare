@@ -1,5 +1,18 @@
+<%= render 'shared/frontend/navbar' %>
+
 <h1>My children</h1>
-<%= link_to dashboard_child_overview_path(params[:child_id]) do %>
-  <%= User.children.child_pic %>
-  <%= User.children.name %>
-<% end %>
+
+<div class="row">
+  <% @children.each do |child| %>
+    <%= link_to dashboard_child_overview_path(child.id) do %>
+      <div class="col-sm-6">
+        <div class="card" style="width: 18rem;">
+          <img src="<%= child.child_pic %>" class="card-img-top" alt="<%= child.name %>的照片">
+          <div class="card-body">
+            <h5 class="card-title"><%= child.name %></h5>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+</div>
