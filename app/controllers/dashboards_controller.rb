@@ -1,5 +1,5 @@
 class DashboardsController < ApplicationController
   def show
-    @children = Child.all    
+    @children = current_user.children
   end
 end  
