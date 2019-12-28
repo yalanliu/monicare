@@ -1,0 +1,4 @@
+<%= render 'shared/frontend/navbar' %>
+
+<h1><%= @child.name %>的行程列表</h1>
+<%= link_to "功能列表", dashboard_child_path(@child.id), class: 'btn btn-secondary' %>
