@@ -2,7 +2,7 @@ class Teacher::DashboardsController < BabyclassAppliciationController
 
   def show
     @teacher = current_teacher
-    @students = @teacher.children.distinct
+    @students = @teacher.children
   end
 
   def student
