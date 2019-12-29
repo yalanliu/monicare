@@ -1,4 +1,4 @@
-<%= form_with scope: :pick_up, url: dashboard_child_pick_up_index_path do |form| %>
+<%= form_with scope: :pick_up, url: dashboard_child_pick_up_index_path, local: true do |form| %>
   <%= form.label :name, "姓名" %>
   <%= form.text_field :name %>
 
