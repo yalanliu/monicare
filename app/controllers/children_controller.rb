@@ -1,5 +1,4 @@
 class ChildrenController < ApplicationController
-<<<<<<< HEAD
   def show
     @child = Child.find(params[:id])
     @pick_ups = @child.pick_ups
@@ -12,12 +11,6 @@ class ChildrenController < ApplicationController
     def index
         
     end
-=======
-  
-  def index
-      
-  end
->>>>>>> wip
 
   def show
       
