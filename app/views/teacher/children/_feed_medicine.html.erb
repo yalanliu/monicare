@@ -1,0 +1,18 @@
+<div class="container text-center">
+<h2 class="text-white">用藥明細</h2>
+<table class="table">
+  <tbody class="text-white">
+
+
+    <% dashboards.medicine.each do |dashboard| %>
+      <tr>
+          <td><%= dashboard.title %></td>
+          <td><%= dashboard.started_at %></td>
+          <td><%= link_to '詳情', teacher_dashboard_child_medicine_path(child_id: params[:id],id: dashboard.id) %></td>
+      </tr>
+    <% end %>
+
+  </tbody>
+</table>
+
+</div>

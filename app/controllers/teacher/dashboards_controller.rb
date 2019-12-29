@@ -1,5 +1,5 @@
-class Teacher::DashboardsController < ApplicationController
-  before_action :baby_class
+class Teacher::DashboardsController < BabyclassAppliciationController
+
   def show
     @teacher = current_teacher
     @students = @teacher.children.distinct
@@ -20,7 +20,5 @@ class Teacher::DashboardsController < ApplicationController
 
   private
   
-  def baby_class
-    @babyclass = Babyclass.all
-  end
+
 end
