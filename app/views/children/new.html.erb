@@ -1,7 +1,12 @@
 <h1>新增小朋友</h1>
 
 <%= form_for @children do |f| %> 
-<%= f.label :name %>
-<%= f.text_field :name %> <br />
+<%= f.label :name, '姓名'%>
+<%= f.text_field :name %>
+<%= form.label :babyclass_id %> 
+<%= form.collection_select :babyclass_id %>  
+<%= form.label :user_id %> 
+<%= form.collection_select :user_id %>  
+
 <%= f.submit %> 
 <% end %>
