@@ -6,6 +6,4 @@ class Teacher::ChildrenController < BabyclassAppliciationController
     @dashboards = @student.dashboards
   end
 
-
-
 end

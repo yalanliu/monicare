@@ -2,6 +2,28 @@
 
 
 <div class="container">
-  <h1 class="text-warning"><%= @student.name %></h1>
-  <p class="text-white">新增吃飯的form</p>
+  <h1 class="text-warning text-center"><%= @student.name %></h1>
+
+  <%= form_with scope: :dashboard, url: teacher_dashboard_child_eat_index_path, local: true do |form| %>
+
+    <div class="form-group">
+      <%= form.label :title, '餐別', class:'text-white' %>
+      <%= form.select(:title, ['早餐','午餐','晚餐','點心'], {}, { :class => 'form-control' }) %>
+    </div>
+
+    <div class="form-group">
+    <%= form.label :content, '餐點內容', class:'text-white' %>
+    <%= form.text_area :content, class:'form-control' %>
+    </div>
+
+    <div class="form-group">
+    <%= form.label :finished_at, '吃飯時間', class:'text-white' %>
+    <%= form.date_field :finished_at, class:'form-control' %>
+    </div>
+
+    <% form.hidden_field :category %>
+    <%=hidden_field_tag 'category', 'meal'  %>
+
+    <%= form.submit '新增紀錄', class:'btn btn-warning' %>
+  <% end %>
 </div>
