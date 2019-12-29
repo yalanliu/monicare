@@ -5,8 +5,10 @@
       <% dashboards.meal.each do |dashboard| %>
       <tr>
           <td><%= dashboard.title %></td>
-          <td><%= dashboard.started_at %></td>
+          <td><%= dashboard.finished_at.to_date %></td>
+          <td><%= dashboard.content   %></td>
           <td><%= link_to '編輯', edit_teacher_dashboard_child_eat_path(child_id: params[:id],id: dashboard.id) %></td>
+          <td><%= link_to '刪除', teacher_dashboard_child_eat_path(child_id: params[:id],id: dashboard.id), method: :delete %></td>
       </tr>
       <% end %>
   </tbody>
