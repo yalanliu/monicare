@@ -15,27 +15,13 @@
     <div class="col-8">
       <div class="tab-content" id="nav-tabContent">
         <div class="tab-pane fade show active" id="feed-medicine">
-          <div class="container text-center">
-            <h2 class="text-white">用藥明細</h2>
-            <table class="table">
-              <tbody class="text-white">
-
-
-                <% @dashboards.each do |dashboard| %>
-                  <tr>
-                      <td><%= dashboard.title %></td>
-                      <td><%= dashboard.started_at %></td>
-                      <td><%= link_to '詳情', teacher_dashboard_child_medicine_path(dashboard) %></td>
-                  </tr>
-                <% end %>
-            
-              </tbody>
-            </table>
-
-          </div>
+          <%= render 'feed_medicine', dashboards:@dashboards %>
         </div>
-        <div class="tab-pane fade" id="meal" >2...</div>
+        <div class="tab-pane fade" id="meal" >
+          <%= render 'meal', dashboards:@dashboards %>
+        </div>
         <div class="tab-pane fade" id="list-pick-up" ><%= render 'pick_up' %></div>
+
         <div class="tab-pane fade" id="other" >4...</div>
       </div>
     </div>

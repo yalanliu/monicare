@@ -1,16 +1,14 @@
-class Teacher::MedicineController < ApplicationController
-  before_action :baby_class
+class Teacher::MedicineController < BabyclassAppliciationController
+
 
   def show 
 
 
-    @student = Child.find(params[:id])
-    @medicine_dashboard = @student.dashboards.medicine
+    @student = Child.find(params[:child_id])
+    @medicine_dashboard = @student.dashboards.medicine.find(params[:id])
   end
 
 
-  def baby_class
-    @babyclass = Babyclass.all
-  end
+
 end
 
