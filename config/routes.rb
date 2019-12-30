@@ -32,4 +32,7 @@ Rails.application.routes.draw do
     end
   end
   root 'teachers#index'
+
+  resources :children
+  
 end
