@@ -8,13 +8,10 @@ class ChildrenController < ApplicationController
     @child = Child.find(params[:child_id])
   end
     
-    def index
-        
-    end
-
-  def show
+  def index
       
   end
+
   
   def new
     @children = Child.new
