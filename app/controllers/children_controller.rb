@@ -2,6 +2,7 @@ class ChildrenController < ApplicationController
   def show
     @child = Child.find(params[:id])
     @pick_ups = @child.pick_ups
+    @dashboards = @child.dashboards
   end
 
   def overview
@@ -27,6 +28,7 @@ class ChildrenController < ApplicationController
     end
   end
   
+
   private
   
   def child_params
