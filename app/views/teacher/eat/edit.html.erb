@@ -3,8 +3,7 @@
 
 <div class="container">
   <h1 class="text-warning"><%= @student.name %></h1>
-  <p class="text-white">編輯吃飯的form</p>
-  <%= form_for @meal_dashboard, url: teacher_dashboard_child_eat_path do |form| %>
+  <%= form_with model:@meal_dashboard, url: teacher_dashboard_child_eat_path, local: true do |form| %>
 
     <div class="form-group">
       <%= form.label :title, '餐別', class:'text-white' %>
