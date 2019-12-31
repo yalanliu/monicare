@@ -6,8 +6,8 @@
       <tr>
           <td><%= dashboard.title %></td>
           <td><%= dashboard.started_at.to_date %></td>
-          <td><%= link_to '編輯', edit_dashboard_child_medicine_path(child_id: params[:id],id: dashboard.id) %></td>
-          <td><%= link_to '刪除', dashboard_child_medicine_path(child_id: params[:id],id: dashboard.id), method: :delete ,data: {confirm:'確定刪除這筆資料？'} %></td>
+          <td><%= link_to '編輯', edit_dashboard_child_medicine_path(child_id: params[:id],id: dashboard.id), class:'btn btn-info' %></td>
+          <td><%= link_to '刪除', dashboard_child_medicine_path(child_id: params[:id],id: dashboard.id), method: :delete ,data: {confirm:'確定刪除這筆資料？'}, class:'btn btn-danger' %></td>
       </tr>
     <% end %>
   </tbody>

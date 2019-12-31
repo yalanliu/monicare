@@ -1,0 +1,2 @@
+module Teacher::MiscHelper
+end

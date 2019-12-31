@@ -20,7 +20,9 @@
         <%= render 'meal', dashboards:@dashboards %>
       </div>
       <div class="tab-pane fade" id="list-pick-up" ><%= render 'pick_up', child: @child, pick_ups: @pick_ups %></div>
-      <div class="tab-pane fade" id="other" >4...</div>
+      <div class="tab-pane fade" id="other" >
+        <%= render 'misc', dashboards:@dashboards %>
+      </div>
     </div>
   </div>
 </div>
