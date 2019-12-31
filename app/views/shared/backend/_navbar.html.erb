@@ -31,7 +31,7 @@
   </form>
   <div> 
     <% if teacher_signed_in? %>
-      <a href="#" class="btn"><%= current_teacher.name %></a>
+      <a href="#" class="btn"><%= current_teacher.name + '老師' %></a>
        <%= link_to "登出", destroy_teacher_session_path, method: 'delete', class: 'btn'	 %>
     <% else %>
       <%= link_to "註冊", new_teacher_registration_path, class: 'btn'	 %>
