@@ -6,11 +6,11 @@
       <tr>
           <td><%= dashboard.title %></td>
           <td><%= dashboard.started_at.to_date %></td>
-          <td><%= link_to '詳情', teacher_dashboard_child_medicine_path(child_id: params[:id],id: dashboard.id) %></td>
+          <td><%= link_to '編輯', edit_dashboard_child_medicine_path(child_id: params[:id],id: dashboard.id) %></td>
+          <td><%= link_to '刪除', dashboard_child_medicine_path(child_id: params[:id],id: dashboard.id), method: :delete ,data: {confirm:'確定刪除這筆資料？'} %></td>
       </tr>
     <% end %>
-
   </tbody>
 </table>
-
+<%= link_to '新增餵藥紀錄', new_dashboard_child_medicine_path(child_id: params[:id]),class:'btn btn-warning'%>
 </div>
