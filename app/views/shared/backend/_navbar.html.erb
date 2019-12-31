@@ -15,8 +15,8 @@
       班級
       </a>
       <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-        <% @babyclass.each do |bbclass| %>
-          <%= link_to bbclass.nursery_class, teacher_dashboard_myclass_path(bbclass), class:'dropdown-item'%>
+        <% @babyclass.each do |babyclass| %>
+          <%= link_to babyclass.nursery_class, teacher_dashboard_myclass_path(babyclass), class:'dropdown-item'%>
         <% end %>
       </div>
   </li>
