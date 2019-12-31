@@ -1,24 +1,17 @@
-# README
+# MONICARE
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+身為爸爸媽媽的你，把疼愛的小孩交給托嬰中心或幼兒園後，你真的知道孩子今天做發生了什麼事情嘛？
 
-Things you may want to cover:
+有了Monicare，讓你一手掌握你家寶貝的最新動態！
 
-* Ruby version
+## Tech Stack:
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Ruby
+* Ruby on Rails
+* MySQL
+* PostgreSQL
+* HTML5
+* CSS3
+* RWD
+* Bootstrap
+* JavaScript

@@ -28,7 +28,8 @@
 
     <div class="form-group">
     <%= form.submit '更新紀錄', class:'btn btn-warning' %>
-    <%= link_to '刪除', teacher_dashboard_child_eat_path(child_id: params[:child_id],id: params[:id]), method: :delete, class:'btn btn-warning' %>
+    <%= link_to '回到上一頁',teacher_dashboard_child_path(id: params[:child_id]), class:'btn btn-warning'  %>
+    <%= link_to '刪除', teacher_dashboard_child_eat_path(child_id: params[:child_id],id: params[:id]), method: :delete, class:'btn btn-danger' %>
     </div>
   <% end %>
 
