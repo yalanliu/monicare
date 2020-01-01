@@ -1,0 +1,18 @@
+<h1>可接送親屬 :</h1>
+<%= link_to "+", new_dashboard_child_pick_up_path(child), class: 'btn btn-outline-secondary btn-lg' %>
+
+<div class="row">
+  <% child.pick_ups.each do |pick_up| %>
+    <%= link_to dashboard_child_pick_up_path(:child_id => child.id, :id => pick_up.id) do %>
+      <div class="col-sm-6">
+        <div class="card" style="width: 18rem;">
+          <img src="<%= pick_up.pick_up_pic %>" class="card-img-top" alt="可接送親屬<%= pick_up.name %>的照片">
+          <div class="card-body">
+            <h5 class="card-title"><%= pick_up.name %></h5>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+</div>
+<%= javascript_pack_tag 'pick_up.js' %>

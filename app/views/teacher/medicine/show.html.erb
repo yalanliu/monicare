@@ -1,0 +1,40 @@
+<%= render 'shared/backend/navbar'%>
+
+
+<div class="container">
+  <h1 class="text-warning"><%= @student.name %></h1>
+  <table class="table table-hover table-secondary ">
+    <tbody class="text-info">
+
+        <tr>
+            <th scope="row">用藥名稱</th>
+            <td><%= @medicine_dashboard.title %></td>
+        </tr>
+        <tr>
+            <th scope="row">用藥日期</th>
+            <td><%= @medicine_dashboard.started_at %></td>
+        </tr>
+        <tr>
+            <th scope="row">用藥時間</th>
+            <td><%= @medicine_dashboard.started_at %></td>
+        </tr>
+        <tr>
+            <th scope="row">備註</th>
+            <td class=""><%= @medicine_dashboard.content %></td>
+
+        </tr>
+        <tr>
+          <th scope="row">餵藥者簽名</th>
+          <td><img src="https://picsum.photos/40/40/?random=22"></td>
+        </tr>
+
+
+
+
+        <td><%= link_to '回到上一頁',teacher_dashboard_child_path(id: params[:child_id]), class:'btn btn-warning'  %></td>
+
+
+  
+    </tbody>
+  </table>
+</div>
