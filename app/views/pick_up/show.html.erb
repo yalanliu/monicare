@@ -1,12 +1,31 @@
 <%= render 'shared/frontend/navbar' %>
-<h1>可接送<%= @child.name %>的親屬</h1>
-
-  <%= @pick_up.pick_up_pic %>
-<p>
-  姓名: <%= @pick_up.name %><br>
-  關係: <%= @pick_up.relationship %><br>
-  備註: <%= @pick_up.note %>
-</p>
-<%= link_to "返回", dashboard_child_path(@child.id, anchor: 'list-pick-up'), class: 'btn btn-info' %>
-<%= link_to "編輯", edit_dashboard_child_pick_up_path(:child_id => @child.id, :id => @pick_up.id), class: 'btn btn-warning' %>
-<%= link_to "刪除", dashboard_child_pick_up_path(:child_id => @child.id, :id => @pick_up.id), method: 'delete',data: {confirm: '確定刪除嗎?'}, class: 'btn btn-danger' %>
+<div class="container">
+  <h1 class="text-warning">可接送<%= @child.name %>的親屬</h1>
+  
+  <%= cover_image_tag @pick_up %>
+  
+  <table class="table table-hover table-secondary">
+    <tbody class="text-info">
+      <tr>
+        <th scope="row">姓名</th>
+        <td><%= @pick_up.name %></td>
+      </tr>
+      <tr>
+        <th scope="row">關係</th>
+        <td><%= @pick_up.relationship %></td>
+      </tr>
+      <tr>
+        <th scope="row">備註</th>
+        <td><%= @pick_up.note %></td>
+      </tr>
+      <tr>
+        <td>
+          <%= link_to "回到上一頁", dashboard_child_path(@child.id, anchor: 'list-pick-up'), class: 'btn btn-warning' %>
+          <%= link_to "編輯", edit_dashboard_child_pick_up_path(:child_id => @child.id, :id => @pick_up.id), class: 'btn btn-info' %>
+          <%= link_to "刪除", dashboard_child_pick_up_path(:child_id => @child.id, :id => @pick_up.id), method: 'delete',data: {confirm: '確定刪除嗎?'}, class: 'btn btn-danger' %>
+        </td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
