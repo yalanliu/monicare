@@ -3,11 +3,11 @@
   <h1 class="text-warning text-center">新增可接送的親屬</h1>
   <%= form_with scope: :pick_up, url: dashboard_child_pick_up_index_path, local: true do |form| %>
     <div class="pick_up_pic mb-3">
-      <%= @pick_up.pick_up_pic %>
+      <%= cover_image_tag @pick_up %>
     </div>
     <div class="input-group mb-3">
       <div class="custom-file">
-        <%= form.label :pick_up_pic, "請上傳照片", class: 'custom-file-label' %>
+        <%= form.label :pick_up_pic, "請上傳照片", class: 'custom-file-label pick_up_pic_url' %>
         <%= form.file_field :pick_up_pic, class: 'custom-file-input' %>
       </div>
     </div>
@@ -30,3 +30,4 @@
     <%= form.submit "送出", class: 'btn btn-warning' %>
   <% end %>
 </div>
+<%= javascript_pack_tag 'pick_up.js' %>
