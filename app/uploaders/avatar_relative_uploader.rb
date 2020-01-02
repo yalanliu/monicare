@@ -10,10 +10,6 @@ class AvatarRelativeUploader < CarrierWave::Uploader::Base
   def store_dir
     "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
   end
-  
-  # def default_url(*args)
-  #   "https://fakeimg.pl/3003200/ff0000,128/000,255/?text=請上傳照片&font=noto"
-  # end
 
   process resize_to_fit: [800, 800]
 
