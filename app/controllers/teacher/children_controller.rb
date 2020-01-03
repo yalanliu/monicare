@@ -33,5 +33,5 @@ class Teacher::ChildrenController < BabyclassAppliciationController
                                  :user_id, 
                                  :babyclass_id
                                  )
-
+  end
 end
