@@ -6,8 +6,24 @@
   }
 }
 
-.card-img-top{
-  height: 300px;
+.meal_pic {
+  img {
+    width: 300px;
+  }
+}
+
+.misc_pic {
+  img {
+    width: 300px;
+  }
+}
+
+.card-img-top.child_pic {
+  height: 253px;
+}
+
+.card-img-top.avatar-relative {
+  height: 333px;
 }
 
 .signature-pad-wrapper {
@@ -27,4 +43,27 @@
   width:400px;
   height:200px;
   background-color: white;
+}
+
+.child_pic {
+  img {
+    width: 100%;
+  }
+}
+
+.child_pic_url {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.custom-file-label::after {
+  content: "瀏覽";
+}
+
+td {
+  #preview_child_pic {
+    height: 100px;
+    width: 100px;
+  }
 }
